@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn1">获取所有菜品</button>
+    <button id="btn2">获取某一道菜品</button>
+    <button id="btn3">添加菜品</button>
+    <button id="btn4">删除菜品</button>
+    <button id="btn5">修改菜品</button>
+    <script src="./axios.min.js"></script>
+    <script>
+        btn1.onclick=function(){
+            axios.get('http://127.0.0.1:8090/admin/dish').then((result)=>{
+                console.log('获取菜品类别成功');
+                console.log(result)
+            }).catch((err)=>{
+                console.log(err);
+            })
+        }
+    </script>
+</body>
+</html>
