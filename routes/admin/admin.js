@@ -38,7 +38,7 @@ router.patch('/',(req,res)=>{
             return;
         }
         //如果查询到了用户，再修改其密码
-        pool.query('UPDATE xfn_admin SET apwd=PASSWOWD(?) WHERE aname=?',[data.newPwd,data.aname],(err,result)=>{
+        pool.query('UPDATE xfn_admin SET apwd=PASSWORD(?) WHERE aname=?',[data.newPwd,data.aname],(err,result)=>{
             if(err) throw err;
             if(result.changedRows>0){
                 //密码修改完成
